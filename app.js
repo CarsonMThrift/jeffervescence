@@ -5,8 +5,9 @@ const JeffApp = {
     this.max = 0
     this.list = document.querySelector(selectors.listSelector)
     document
-    .querySelector(selectors.formSelector)
-    .addEventListener('submit', this.addMovie.bind(this))
+      .querySelector(selectors.formSelector)
+      .addEventListener('submit', this.addMovie.bind(this))
+
   },
   addMovie(ev) {
     ev.preventDefault()
