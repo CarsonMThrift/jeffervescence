@@ -1,47 +1,70 @@
 const JeffApp = {
   init(selectors) {
-    //array to keep movies on so there is a reference to them
-    this.movieArr = []
+    //array to keep products on so there is a reference to them
+    this.objectArr = [
+      {Name: "Razer Blade Pro", Image: "rzrbladepro.png"},
+      {Name: "Razer Blade", Image: "rzrbladepro.png"},
+      {Name: "Razer Blade Stealth", Image: "rzrbladepro.png"}
+
+    ];
+
+    this.productArr = [];
     this.max = 0
     this.list = document.querySelector(selectors.listSelector)
     document
       .querySelector(selectors.formSelector)
-      .addEventListener('submit', this.addMovie.bind(this))
+      .addEventListener('submit', this.addProduct.bind(this))
 
   },
-  addMovie(ev) {
+  getImage(productName){
+
+    for (i = 0; i < this.objectArr.length; i++) { 
+      if(this.objectArr[i].Name == productName){
+        console.log(this.objectArr[i].Image)
+        return this.objectArr[i].Image
+      }
+    }
+
+    return "RazerLogoGreen.png"
+
+
+  },
+  addProduct(ev) {
     ev.preventDefault()
     const m = ev.target
-    const movie = {
+    const product = {
       id: this.max,
-      name: m.movieTitle.value,
+      name: m.productTitle.value,
     }
-    //add movie to kept array
-    this.movieArr.push(movie)
-    const listItem = this.renderListItem(movie)
+    // const image = getImage(product.name)
+
+    product.image = this.getImage(product.name)
+    console.log(product.name)
+    //add product to kept array
+    this.productArr.push(product)
+    const listItem = this.renderListItem(product)
     this.list.appendChild(listItem)
     ++this.max
 
     const buttonList = listItem.childNodes
 
-    buttonList[2].addEventListener('click', this.favMovie.bind(this))
-    buttonList[1].addEventListener('click', this.deleteMovie.bind(this))
+    buttonList[2].addEventListener('click', this.favProduct.bind(this))
+    buttonList[1].addEventListener('click', this.deleteProduct.bind(this))
 
-    m.movieTitle.value = ''
+    m.productTitle.value = ''
 
   },
-  deleteMovie(ev) {
+  deleteProduct(ev) {
     ev.preventDefault()
     const m = ev.target.parentElement
     const listItem = m.parentElement
     const index = m.className
-    this.movieArr.splice(index, 1)
+    this.productArr.splice(index, 1)
 
     listItem.outerHTML = ''
 
   },
-
-  favMovie(ev) {
+  favProduct(ev) {
     ev.preventDefault()
     const m = ev.target.parentElement
     const listItem = m.parentElement
@@ -54,12 +77,11 @@ const JeffApp = {
     }
 
   },
-
-  renderListItem(movie) {
+  renderListItem(product) {
     const item = document.createElement('li')
-    item.className = movie.id
-    item.textContent = movie.name
-    item.dataset.id = movie.id
+    item.className = product.id
+    item.textContent = product.name
+    item.dataset.id = product.id
 
     const delButton = document.createElement('button')
     delButton.className = 'deleteButton'
@@ -70,13 +92,18 @@ const JeffApp = {
     delButton.innerHTML = '<img src="cancel.png" alt="Delete" />'
     favButton.innerHTML = '<img src="heart.png" alt="Favorite" />'
 
+    const imageToApp = document.createElement('img')
+    imageToApp.src = product.image
+
     item.appendChild(delButton)
     item.appendChild(favButton)
+    item.appendChild(imageToApp)
+
 
     return item
   }
 }
 JeffApp.init({
-  formSelector: '#movie-form',
-  listSelector: '#movie-list'
+  formSelector: '#product-form',
+  listSelector: '#product-list'
 })

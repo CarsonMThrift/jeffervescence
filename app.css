@@ -2,6 +2,8 @@
 h1 {
 
     margin-top: 50px;
+    color: rgb(71,225,12);
+    font-family: 'Open Sans Condensed', sans-serif;
 
 }
 
@@ -14,6 +16,9 @@ li {
     margin-left: -20px;
     margin-top: 15px;
     background-color: white;
+    height: auto;
+    width: auto;
+    
 }
 
 /*General format for the delete/fav buttons*/
@@ -21,26 +26,29 @@ li {
 
     float: right;
     margin-right: 10px;
+    margin-bottom: 50px;
 
 }
 
 /* Darker background-color on hover */
 ul li:hover {
-    background: cornflowerblue;
+    background:lightgreen;
 }
 
 /*General bg color*/
 body {
 
-    background-color: lightgrey;
+    background: url("razer_chroma_wallpaper.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 
 }
 
 /*success button colors*/
 .button.success {
 
-    background-color: navy;
-    color: lightblue;
+    background-color: dimgray;
+    color: lightgreen;
 
 }
 
