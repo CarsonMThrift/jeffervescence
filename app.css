@@ -23,7 +23,7 @@ li {
 }
 
 /*General format for the delete/fav buttons*/
-.deleteButton, .favButton {
+.deleteButton, .favButton, .downButton, .upButton {
 
     float: right;
     margin-right: 10px;
