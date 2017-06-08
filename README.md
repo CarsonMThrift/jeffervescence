@@ -1,4 +1,3 @@
-"# My New Project"
 #Jeffervescence  
 * Store the flicks in an array, as well as in the DOM  
 ### Super Mega Bonus Credit  
