@@ -1,4 +1,4 @@
-#Jeffervescence  
+# Jeffervescence
 * Store the flicks in an array, as well as in the DOM  
 ### Super Mega Bonus Credit  
 *Add a promote/favorite button, just like yesterday! 
