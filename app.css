@@ -1,0 +1,42 @@
+
+/*General format for the list items*/
+li {
+
+    list-style: none;
+    border: 1px solid black;
+    padding: 20px 20px;
+    margin-left: -20px;
+    margin-top: 15px;
+    background-color: white;
+}
+
+/*General format for the delete/fav buttons*/
+.deleteButton, .favButton {
+
+    float: right;
+    margin-right: 10px;
+
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+    background: cornflowerblue;
+}
+
+/*General bg color*/
+body {
+
+    background-color: lightgrey;
+
+}
+
+/*success button colors*/
+.button.success {
+
+    background-color: navy;
+    color: lightblue;
+
+}
+
+
+
