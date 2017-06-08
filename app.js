@@ -20,7 +20,7 @@ const JeffApp = {
     this.movieArr.push(movie)
     const listItem = this.renderListItem(movie)
     this.list.appendChild(listItem)
-    ++ this.max
+    ++this.max
 
     const buttonList = listItem.childNodes
 
@@ -30,7 +30,7 @@ const JeffApp = {
     m.movieTitle.value = ''
 
 
-  },    
+  },
   deleteMovie(ev) {
     ev.preventDefault()
     const m = ev.target.parentElement
@@ -42,24 +42,25 @@ const JeffApp = {
 
   },
 
-   favMovie(ev) {
+  favMovie(ev) {
     ev.preventDefault()
     const m = ev.target.parentElement
     const listItem = m.parentElement
 
-    if(listItem.style.backgroundColor != 'pink'){
+    if (listItem.style.backgroundColor != 'pink') {
       listItem.style.backgroundColor = 'pink'
-    }else{
+    } else {
       listItem.style.backgroundColor = 'white'
 
     }
 
   },
-  
+
   renderListItem(movie) {
     const item = document.createElement('li')
     item.className = movie.id
     item.textContent = movie.name
+    item.dataset.id = movie.id
 
     const delButton = document.createElement('button')
     delButton.className = 'deleteButton'
@@ -72,10 +73,11 @@ const JeffApp = {
 
     item.appendChild(delButton)
     item.appendChild(favButton)
-    
+
     return item
   }
 }
 JeffApp.init({
   formSelector: '#movie-form',
-  listSelector: '#movie-list'})
+  listSelector: '#movie-list'
+})
