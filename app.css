@@ -2,6 +2,7 @@
 h1 {
 
     margin-top: 50px;
+    margin-bottom: 30px;
     color: rgb(71,225,12);
     font-family: 'Open Sans Condensed', sans-serif;
 
@@ -18,7 +19,7 @@ li {
     background-color: white;
     height: auto;
     width: auto;
-    
+
 }
 
 /*General format for the delete/fav buttons*/
@@ -51,6 +52,8 @@ body {
     color: lightgreen;
 
 }
+
+
 
 
 

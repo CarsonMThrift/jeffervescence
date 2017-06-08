@@ -3,8 +3,13 @@ const JeffApp = {
     //array to keep products on so there is a reference to them
     this.objectArr = [
       {Name: "Razer Blade Pro", Image: "rzrbladepro.png"},
-      {Name: "Razer Blade", Image: "rzrbladepro.png"},
-      {Name: "Razer Blade Stealth", Image: "rzrbladepro.png"}
+      {Name: "Razer Blade", Image: "rzrblade.jpg"},
+      {Name: "Razer Blade Stealth", Image: "rzrbladestealth.jpg"},
+      {Name: "Razer Mamba", Image: "rzrmamba.png"},
+      {Name: "Razer Lancehead", Image: "rzrlancehead.jpg"}
+
+
+
 
     ];
 
@@ -94,6 +99,7 @@ const JeffApp = {
 
     const imageToApp = document.createElement('img')
     imageToApp.src = product.image
+    imageToApp.className = 'prdImage'
 
     item.appendChild(delButton)
     item.appendChild(favButton)
