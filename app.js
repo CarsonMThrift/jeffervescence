@@ -29,7 +29,6 @@ const JeffApp = {
 
     m.movieTitle.value = ''
 
-
   },
   deleteMovie(ev) {
     ev.preventDefault()
